@@ -1,4 +1,0 @@
-
-Router.route('/',{
-	template:'main'
-});
