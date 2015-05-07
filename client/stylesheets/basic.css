@@ -1,33 +1,5 @@
 
 
-@keyframes basicPadeInAnim{
-    from{
-        opacity:0.0;
-    }
-    to{
-        opacity:1.0;
-    }
-}
-@keyframes basicPadeOutAnim{
-    from{
-        opacity:1.0;
-    }
-    to{
-        opacity:0.0;
-    }
-}
-
-/* animation : name duration timing-function delay iteration-count direction; */
-.basicPadeIn{
-    -moz-animation: basicPadeInAnim 1.5s linear 0s 1 normal;
-    -moz-animation-fill-mode: forwards;
-    -webkit-animation: basicPadeInAnim 1.5s linear 0s 1 normal;
-    -webkit-animation-fill-mode: forwards;
-}
-
-.basicPadeOut{
-    -moz-animation: basicPadeOutAnim 1.5s linear 0s 1 normal;
-    -moz-animation-fill-mode: forwards;
-    -webkit-animation: basicPadeOutAnim 1.5s linear 0s 1 normal;
-    -webkit-animation-fill-mode: forwards;
+.basicBody{
+    padding:0px;
 }

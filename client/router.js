@@ -1,4 +1,8 @@
 
 Router.route('/',{
-	template:'main'
+	template:'logo'
+});
+
+Router.route('/title',{
+	template:'title'
 });
