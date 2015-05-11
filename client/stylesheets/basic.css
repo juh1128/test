@@ -1,5 +1,34 @@
 
 
-.basicBody{
+
+.nonePadding{
     padding:0px;
+}
+
+.noneMargin{
+    margin:0px;
+}
+
+.flexibleImage{
+    max-width:100%;
+}
+
+/*
+    반응형 사이즈로 iframe 미디어 넣기
+    <div class='bogus-wrapper'><notextile><figure>
+        <iframe src" ... "></iframe>
+    </figure></notextile></div>
+   */
+figure{
+    height:0;
+    padding-bottom:56.25%; /* 16:9 */
+    position: relative;
+    width: 100%;
+}
+iframe{
+    height:100%;
+    left:0;
+    position: absolute;;
+    top: 0;
+    width: 100%;
 }
