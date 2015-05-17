@@ -2,14 +2,14 @@
  * Created by JYH on 2015-05-16.
  */
 
-widthRate =  screen.width / 640;
-heightRate =  screen.height / 360;
+widthRate =  $(window).width() / 640;
+heightRate =  $(window).height() / 360;
 
 displayNotice = true;
 
 updateRate = function(){
-    widthRate =  screen.width / 640;
-    heightRate =  screen.height / 360;
+    widthRate =  $(window).width() / 640;
+    heightRate =  $(window).height() / 360;
 }
 
 resizingImg = function(){
