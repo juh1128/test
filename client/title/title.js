@@ -34,11 +34,11 @@ function noticeInit(){
     slideData = noticeSlideImages.find( {} );
 
     //SlideImage의 자식 요소로 thumbnail 나열
-    slideData.forEach( function(doc){
+/*    slideData.forEach( function(doc){
         if(doc){
             $('.slideImage').
         }
-    });
+    });*/
 
 
     //스플래시 이미지 초기화

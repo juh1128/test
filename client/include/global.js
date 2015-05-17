@@ -14,11 +14,13 @@ updateRate = function(){
 
 resizingImg = function(){
     updateRate();
-    $('img').each( function(){
-        var oldWitdh = $(this).width();
-        var oldHeight = $(this).height();
-        var resizeWidth = oldWitdh * widthRate;
-        var resizeHeight = oldHeight * heightRate;
-        $(this).attr({width: resizeWidth, height: resizeHeight});
-    });
+    if( widthRate != 0 && heightRate != 0) {
+        $('img').each(function () {
+            var oldWitdh = $(this).width();
+            var oldHeight = $(this).height();
+            var resizeWidth = oldWitdh * widthRate;
+            var resizeHeight = oldHeight * heightRate;
+            $(this).attr({width: resizeWidth, height: resizeHeight});
+        });
+    }
 }
