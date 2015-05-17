@@ -1,10 +1,19 @@
 
+Router.configure({
+	loadingTemplate: 'loading'
+});
+
 Router.route('/',{
 	template:'logo'
 });
 
-Router.route('/title',{
-	template:'title'
+Router.route('/title', {
+	template: 'title',
+
+	waitOn: function () {
+		return [Meteor.subscribe('noticeSlideImages')];
+	}
+
 });
 
 Router.route('/pororoTown',{

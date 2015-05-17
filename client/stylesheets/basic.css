@@ -10,7 +10,26 @@
 }
 
 .flexibleImage{
-    max-width:100%;
+     max-width:100%;
+ }
+
+div{
+    padding:0px;
+    margin:0px;
+}
+span{
+    padding:0px;
+    margin:0px;
+    border: 0px;
+}
+img{
+    display:inline;
+}
+
+.coverBackGround{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 /*
@@ -28,7 +47,7 @@ figure{
 iframe{
     height:100%;
     left:0;
-    position: absolute;;
+    position: absolute;
     top: 0;
     width: 100%;
 }

@@ -1,6 +1,45 @@
 
 <template name="title">
 
-    <canvas id="titleCvs" width="300" height="400">canvas load fail. </canvas>
+    <style>
+        #townSelect{
+            position:fixed;  left: 0px;  top: 0px;
+            z-index:0;
+        }
+
+        #noticeBack{
+            position:fixed;  left:10px;  top:10px;
+            display:none;
+            z-index:1;
+        }
+
+        #notice{
+            position:absolute; left:0px; top:0px;
+            z-index:2;
+        }
+        #notice .splashImage{
+            position:relative; left:5px; top:10px;
+        }
+        #notice .slideImage{
+            position:relative; left:5px; top: 10px;
+        }
+        #notice .noticeList {
+            position:relative; left:5px; top: 18px;
+        }
+    </style>
+
+    <!-- 마을 이동 버튼 이미지 -->
+    <div id="townSelect">
+        <img id="pororoBtn" src="http://placehold.it/320x360/87CEFA/&text=pororo"><img id="tayoBtn" src="http://placehold.it/320x360/FFDC3C/&text=tayo">
+    </div>
+    <!-- 공지사항 팝업 -->
+    <div id="noticeBack">
+        <img class="bg" src="http://placehold.it/620x340/282828/&text=notice">
+        <div id="notice">
+            <img class="splashImage" src="http://placehold.it/610x124/808000/&text=splash">
+            <img class="slideImage" src="http://placehold.it/610x85/EEE8AA/&text=slide">
+            <img class="noticeList" src="http://placehold.it/610x102/191970/&text=noticeList">
+        </div>
+    </div>
 
 </template>

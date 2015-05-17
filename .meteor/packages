@@ -12,3 +12,7 @@ mizzao:bootstrap-3
 ian:accounts-ui-bootstrap-3
 accounts-password
 jquery
+linto:jquery-ui
+mjn:famous
+gadicohen:famous-views
+sacha:spin
