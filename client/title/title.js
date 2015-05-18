@@ -4,15 +4,22 @@
 
 var slideData;
 var nowSelected;
-
-
+var slideJsonPath;
+var owlCarousel;
+var displayItemNum;
+var firstUpdate;
 
 function updateSplash(){
 
     var imageCnt = slideData.count();
     nowSelected++;
+
+    if(nowSelected < imageCnt-(displayItemNum-1) && !firstUpdate){
+        owlCarousel.next();
+    }
     if(nowSelected >= imageCnt){
         nowSelected = 0;
+        owlCarousel.goTo(0);
     }
 
     var nowSelectImage = noticeSlideImages.findOne( {order:nowSelected});
@@ -25,7 +32,7 @@ function updateSplash(){
     }
     $('.splashImage').attr("src", splashUrl);
 
-    setTimeout(updateSplash,2500);
+    setTimeout(updateSplash,3000);
 }
 
 function noticeInit(){
@@ -36,26 +43,38 @@ function noticeInit(){
     var resizeHeight = 85 * heightRate;
     $('#notice#slide').css('width',resizeWidth,'height',resizeHeight);*/
 
-    slideData = noticeSlideImages.find( {} );
+    slideData = noticeSlideImages.find( {}, {sort: {order:1}} );
 
-    //SlideImage의 자식 요소로 thumbnail 나열
-/*    slideData.forEach( function(doc){
-        if(doc){
-            $('.slideImage').
-        }
-    });*/
+    //이벤트 썸네일을 DB에서 불러와 업데이트
+    slideData.forEach( function(doc){
+       if(doc){
+           var str = "<div class='item'>" + "<img class='slideImage lazyOwl' data-src=" + doc.thumbnail + ">" + "</div>";
+           $('#carousel').append(str);
+       }
+    });
 
+    displayItemNum = 3;
+    $('#carousel').owlCarousel({
+        items:displayItemNum,
+        itemsTablet:[768,displayItemNum],
+        itemsMobile:[479,displayItemNum],
+        autoHeight:true,
+        pagination:false,
+        lazyLoad:true
+    });
+    owlCarousel = $('#carousel').data('owlCarousel');
 
     //스플래시 이미지 초기화
+    firstUpdate = true;
     nowSelected = -1;
     updateSplash();
+    firstUpdate = false;
 }
 
 Template.title.rendered = function(){
     if( displayNotice ){
         noticeInit();
     }
-    resizingImg();
 }
 Template.title.destroyed = function(){
 
