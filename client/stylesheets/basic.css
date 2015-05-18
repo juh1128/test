@@ -1,17 +1,14 @@
 
-
-
-.nonePadding{
+html{
+    width:100%;
+    height:100%;
+}
+body{
     padding:0px;
-}
-
-.noneMargin{
     margin:0px;
+    width:100%;
+    height:100%;
 }
-
-.flexibleImage{
-     max-width:100%;
- }
 
 div{
     padding:0px;
@@ -22,15 +19,22 @@ span{
     margin:0px;
     border: 0px;
 }
-img{
-    display:inline;
+
+.container-fluid{
+    padding:0px;
 }
 
-.coverBackGround{
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+img{
+    width: 100%;
+    height: 100%;
 }
+
+[class*="col-"]{
+    margin: 0px;
+    padding: 0px;
+}
+
+
 
 /*
     반응형 사이즈로 iframe 미디어 넣기

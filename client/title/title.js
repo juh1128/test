@@ -31,6 +31,11 @@ function updateSplash(){
 function noticeInit(){
     $('#noticeBack').css( 'display','inline' );
 
+    //슬라이드 사이즈 조절
+/*    var resizeWidth = 610 * widthRate;
+    var resizeHeight = 85 * heightRate;
+    $('#notice#slide').css('width',resizeWidth,'height',resizeHeight);*/
+
     slideData = noticeSlideImages.find( {} );
 
     //SlideImage의 자식 요소로 thumbnail 나열

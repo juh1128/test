@@ -3,48 +3,63 @@
 
     <style>
         #townSelect{
-            position:fixed;  left: 0px;  top: 0px;
+            position:absolute;  left: 0px;  top: 0px;
             z-index:0;
+            width:103%;
+            height:100%;
         }
 
-        #noticeBack{
+/*        #noticeBack{
             position:fixed;  left:10px;  top:10px;
             display:none;
             z-index:1;
+            width:620px; height:340px;
         }
 
         #notice{
             position:absolute; left:0px; top:0px;
             z-index:2;
+            width:620px; height:340px;
         }
         #notice .splashImage{
             position:relative; left:5px; top:10px;
+            width:610px; height:124px;
         }
         #notice #slide{
             position:relative; left:5px; top: 10px;
+            width:610px; height:85px;
+            overflow:hidden;
         }
         #notice .noticeList {
             position:relative; left:5px; top: 18px;
+            width:610px; height:102px;*/
         }
     </style>
 
     <!-- 마을 이동 버튼 이미지 -->
-    <div id="townSelect">
-        <img id="pororoBtn" src="http://placehold.it/320x360/87CEFA/&text=pororo"><img id="tayoBtn" src="http://placehold.it/320x360/FFDC3C/&text=tayo">
+    <div id="townSelect" class="row">
+        <div class="col-xs-6">
+            <img id="pororoBtn" src="http://placehold.it/320x360/87CEFA/&text=pororo">
+        </div>
+        <div class="col-xs-6">
+            <img id="tayoBtn" src="http://placehold.it/320x360/FFDC3C/&text=tayo">
+        </div>
     </div>
     <!-- 공지사항 팝업 -->
+<!--
     <div id="noticeBack">
         <img class="bg" src="http://placehold.it/620x340/282828/&text=notice">
         <div id="notice">
-            <!-- 스플래쉬 이미지 -->
+
             <img class="splashImage" src="http://placehold.it/610x124/808000/&text=splash">
-            <!-- 공지사항 슬라이드 부분 -->
+
             <div id="slide">
                 <img class="slideImage" src="http://placehold.it/610x85/EEE8AA/&text=slide">
             </div>
-            <!-- 공지 리스트 -->
+
             <img class="noticeList" src="http://placehold.it/610x102/191970/&text=noticeList">
         </div>
     </div>
+-->
 
 </template>
