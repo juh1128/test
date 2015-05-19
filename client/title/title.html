@@ -2,12 +2,12 @@
 <template name="title">
 
     <style>
-        #townSelect{
+/*        #townSelect{
             position:absolute;  left: 0%;  top: 0%;
             z-index:0;
             width:100%;
             height:100%;
-        }
+        }*/
 
         #noticeBack{
             position:absolute;  left:2.5%;  top:2.5%;
@@ -38,17 +38,30 @@
             margin: 0% 1% 1% 1%;
             width:98%; height:98%;
         }
+
+        #noticeExitBtn{
+            position:absolute;
+            z-index:2;
+        }
     </style>
 
     <!-- 마을 이동 버튼 이미지 -->
-    <div id="townSelect" class="row">
+<!--    <div id="townSelect" class="row">
         <div class="col-xs-6">
             <img id="pororoBtn" src="http://placehold.it/320x360/87CEFA/&text=pororo">
         </div>
         <div class="col-xs-6">
             <img id="tayoBtn" src="http://placehold.it/320x360/FFDC3C/&text=tayo">
         </div>
+    </div>-->
+
+    <!-- 시작 화면 -->
+    <div id="title" class="row">
+        <div class="col-xs-12">
+            <img id="titleBtn" src="http://placehold.it/640x360/282828/&text=title">
+        </div>
     </div>
+
     <!-- 공지사항 팝업 -->
     <div id="noticeBack" class="row">
 
@@ -71,6 +84,11 @@
             </div>
         </div>
 
+        <div id="noticeExitBtn" class="mfp-img-mobile">
+            <button id="exitBtn" class="mfp-close" type="button" title="Close (Esc)">x</button>
+        </div>
     </div>
+
+
 
 </template>

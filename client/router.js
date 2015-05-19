@@ -16,6 +16,10 @@ Router.route('/title', {
 
 });
 
+Router.route('/login', {
+	template: 'login'
+});
+
 Router.route('/pororoTown',{
 	template:'pororoTown'
 });

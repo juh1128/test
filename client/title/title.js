@@ -28,28 +28,46 @@ function updateSplash(){
         splashUrl = nowSelectImage.splash;
     }
     else{
-        splashUrl = 'http://placehold.it/610x124/808000/&text=splash';
+        splashUrl = 'http://placehold.it/610x124/282828/&text=loading...';
     }
     $('.splashImage').attr("src", splashUrl);
+    $('.splashImage').magnificPopup({
+       items:{
+           src: nowSelectImage.eventUrl
+       },
+        type: 'image',
+        image:{
+            varticalFit:true
+        },
+        closeOnBgClick:false,
+        mainClass:'mfp-with-zoom mfp-img-mobile'
+    });
 
     setTimeout(updateSplash,3000);
 }
 
 function noticeInit(){
+    displayNotice = true;
     $('#noticeBack').css( 'display','inline' );
-
-    //슬라이드 사이즈 조절
-/*    var resizeWidth = 610 * widthRate;
-    var resizeHeight = 85 * heightRate;
-    $('#notice#slide').css('width',resizeWidth,'height',resizeHeight);*/
 
     slideData = noticeSlideImages.find( {}, {sort: {order:1}} );
 
     //이벤트 썸네일을 DB에서 불러와 업데이트
     slideData.forEach( function(doc){
        if(doc){
-           var str = "<div class='item'>" + "<img class='slideImage lazyOwl' data-src=" + doc.thumbnail + ">" + "</div>";
+           var str = "<div id='"+ doc.name + "' class='item'>" +"<img class='slideImage lazyOwl' data-src=" + doc.thumbnail + ">" + "</div>";
            $('#carousel').append(str);
+           $('#'+doc.name).magnificPopup({
+              items:{
+                  src: doc.eventUrl
+              },
+               type: 'image',
+               image:{
+                   varticalFit:true
+               },
+               closeOnBgClick:false,
+               mainClass:'mfp-with-zoom mfp-img-mobile'
+           });
        }
     });
 
@@ -69,12 +87,18 @@ function noticeInit(){
     nowSelected = -1;
     updateSplash();
     firstUpdate = false;
+
+    //종료 버튼
+    $('#exitBtn').attr("onclick","$('#noticeBack').css( 'display','none' ); displayNotice=false;");
 }
 
 Template.title.rendered = function(){
-    if( displayNotice ){
-        noticeInit();
-    }
+    noticeInit();
+    $('#titleBtn').bind('click',function(){
+       if( !displayNotice ){
+           Router.go('/login');
+       }
+    });
 }
 Template.title.destroyed = function(){
 
